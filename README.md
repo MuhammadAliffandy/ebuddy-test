@@ -87,17 +87,6 @@ To build all apps and packages, run:
 npm run build  # or yarn build
 ```
 
-## Remote Caching
-
-Turborepo supports [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share build artifacts across different environments, improving performance.
-
-Enable remote caching with Vercel:
-
-```sh
-npx turbo login
-npx turbo link
-```
-
 ## Technologies Used
 
 - **Next.js** - React framework for frontend development
