@@ -57,7 +57,84 @@ cd apps/frontend
 npm run dev  # or yarn dev
 ```
 
-## API Endpoints
+## API Documentation
+
+### User Endpoints
+
+#### Get All Users
+```http
+GET /api/users
+```
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com"
+  }
+]
+```
+
+#### Get Current User
+```http
+GET /api/users/current
+Authorization: Bearer <token>
+```
+**Response:**
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@example.com"
+}
+```
+
+#### Update User
+```http
+PATCH /api/users/:id
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+**Request Body:**
+```json
+{
+  "name": "Updated Name",
+  "email": "updated@example.com"
+}
+```
+**Response:**
+```json
+{
+  "message": "User updated successfully"
+}
+```
+
+#### Create User
+```http
+POST /api/users
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+**Request Body:**
+```json
+{
+  "name": "New User",
+  "email": "new@example.com",
+  "password": "securepassword"
+}
+```
+**Response:**
+```json
+{
+  "message": "User created successfully",
+  "user": {
+    "id": 2,
+    "name": "New User",
+    "email": "new@example.com"
+  }
+}
+```
 
 The backend provides a RESTful API. Example endpoints:
 
@@ -93,5 +170,6 @@ npm run build  # or yarn build
 - **Express.js** - Backend API framework
 - **Turbo** - Monorepo management tool
 - **TypeScript** - Static typing for JavaScript
+
 
 
