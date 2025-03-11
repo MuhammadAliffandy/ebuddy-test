@@ -63,11 +63,11 @@ Create a `.env` file in the root directory and add the necessary environment var
 
 ```
 # Backend
-PORT=5000
+PORT=5002
 DATABASE_URL=your_database_url
 
 # Frontend
-NEXT_PUBLIC_API_URL=http://localhost:5000
+NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
 ## Build
@@ -76,6 +76,42 @@ To build all apps and packages, run:
 
 ```sh
 npm run build  # or yarn build
+```
+
+## Enviroment
+you can set .env early to launch the program
+
+Frontend
+```sh
+# API URLs
+BASE_URL=
+BASE_URL_DEV=
+NODE_ENV=
+
+# Firebase Configuration
+FB_API_KEY=
+FB_AUTH_DOMAIN=
+FB_PROJECT_ID=
+FB_STORAGE_BUCKET=
+FB_MESSAGING_SENDER_ID=
+FB_APP_ID=
+FB_MEASUREMENT_ID=
+```
+Backend
+you must adding env for backend in backend and functions folder
+
+```sh
+SECRET_KEY =
+FB_PRIVATE_KEY_ID=
+FB_PRIVATE_KEY=
+FB_CLIENT_EMAIL=
+FB_CLIENT_ID=
+FB_AUTH_URI=
+FB_TOKEN_URI=
+FB_AUTH_PROVIDER_X509_CERT_URL=
+FB_CLIENT_X509_CERT_URL=
+FB_UNIVERSE_DOMAIN=
+
 ```
 
 ## Technologies Used
