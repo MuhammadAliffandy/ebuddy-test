@@ -1,84 +1,108 @@
-# Turborepo starter
+# eBuddy Test
 
-This Turborepo starter is maintained by the Turborepo core team.
+This Turborepo-based project contains the **eBuddy Test** application, including both frontend and backend implementations. The frontend is built with **Next.js**, while the backend is developed using **Express.js**. **Turbo** is used for efficient monorepo management.
 
-## Using this example
+## What's Inside?
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
+This repository includes the following applications:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `apps/frontend`: A [Next.js](https://nextjs.org/) application
+- `apps/backend`: An [Express.js](https://expressjs.com/) backend API
+- `@ebuddy/config`: Shared configuration settings
+- `@ebuddy/eslint-config`: Shared ESLint configuration
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Each package/app is fully developed using **TypeScript**.
 
-### Utilities
+## Requirements
 
-This Turborepo has some additional tools already setup for you:
+Ensure you have the following installed before running the project:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- **Node.js** (Latest LTS recommended)
+- **npm** or **yarn** for package management
+- **Turbo** for monorepo management
 
-### Build
+## Installation
 
-To build all apps and packages, run the following command:
+Clone the repository and install dependencies:
 
+```sh
+git clone https://github.com/MuhammadAliffandy/ebuddy-test.git
+cd ebuddy-test
+npm install  # or yarn install
 ```
-cd my-turborepo
-pnpm build
-```
 
-### Develop
+## Running the Project
 
 To develop all apps and packages, run the following command:
 
+```sh
+npm run dev  # or yarn dev
 ```
-cd my-turborepo
-pnpm dev
+
+Alternatively, you can start each app individually:
+
+### Running the Backend
+
+```sh
+cd apps/backend
+npm run dev  # or yarn dev
 ```
 
-### Remote Caching
+### Running the Frontend
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+```sh
+cd apps/frontend
+npm run dev  # or yarn dev
+```
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## API Endpoints
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+The backend provides a RESTful API. Example endpoints:
+
+- `GET /api/example` - Sample API response
+- `POST /api/example` - Create a new resource
+
+For full API documentation, refer to the backend source code.
+
+## Environment Variables
+
+Create a `.env` file in the root directory and add the necessary environment variables:
 
 ```
-cd my-turborepo
+# Backend
+PORT=5000
+DATABASE_URL=your_database_url
+
+# Frontend
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+## Build
+
+To build all apps and packages, run:
+
+```sh
+npm run build  # or yarn build
+```
+
+## Remote Caching
+
+Turborepo supports [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share build artifacts across different environments, improving performance.
+
+Enable remote caching with Vercel:
+
+```sh
 npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
 npx turbo link
 ```
 
-## Useful Links
+## Technologies Used
 
-Learn more about the power of Turborepo:
+- **Next.js** - React framework for frontend development
+- **Express.js** - Backend API framework
+- **Turbo** - Monorepo management tool
+- **TypeScript** - Static typing for JavaScript
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
